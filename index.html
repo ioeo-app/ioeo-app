@@ -1,64 +1,60 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ioeo</title>
-<meta name="description" content="ioeo — 조용하고 깔끔한 Android 앱을 만듭니다. Tide Launcher, Tide Browser.">
-<style>
-  :root { --bg:#0E1A24; --fg:#F2EEE6; --muted:#A3ADB7; --line:#22323F; --accent:#6FC2C0; --card:#132330; }
-  * { box-sizing: border-box; }
-  body { margin:0; background:var(--bg); color:var(--fg); font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif; }
-  main { max-width: 720px; margin: 0 auto; padding: 72px 20px 64px; }
-  .mark { display:flex; align-items:flex-end; gap:10px; height:64px; margin-bottom: 28px; }
-  .mark .i { display:flex; flex-direction:column; align-items:center; gap:7px; }
-  .mark .dot { width:12px; height:12px; border-radius:50%; background:var(--accent); }
-  .mark .bar { width:12px; height:46px; border-radius:6px; background:var(--fg); }
-  .mark .ring { width:46px; height:46px; border-radius:50%; border:8px solid var(--fg); }
-  .mark .half { width:46px; height:46px; border-radius:50%; border:8px solid var(--fg); background:linear-gradient(90deg, var(--fg) 50%, transparent 50%); }
-  .mark .full { width:46px; height:46px; border-radius:50%; background:var(--fg); }
-  h1 { font-size: 40px; font-weight: 500; letter-spacing: -1px; margin: 0 0 8px; }
-  .lead { color: var(--muted); font-size: 18px; margin: 0 0 48px; }
-  h2 { font-size: 14px; font-weight: 600; color: var(--muted); letter-spacing: 0.5px; margin: 0 0 14px; }
-  .apps { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-bottom: 48px; }
-  .app { background: var(--card); border:1px solid var(--line); border-radius: 18px; padding: 20px 22px; }
-  .app h3 { margin: 0 0 4px; font-size: 18px; font-weight: 600; }
-  .app p { margin: 0 0 10px; color: var(--muted); font-size: 15px; }
-  .badge { display:inline-block; font-size: 13px; color: var(--accent); }
-  .links { display:flex; flex-wrap:wrap; gap: 20px; }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  footer { margin-top: 64px; color: var(--muted); font-size: 14px; }
-</style>
+<meta name="description" content="ioeo makes quiet, tidy apps for Android: Tide Launcher and Tide Browser.">
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/lang.js"></script>
 </head>
 <body>
 <main>
-  <div class="mark" role="img" aria-label="ioeo">
-    <div class="i"><div class="dot"></div><div class="bar"></div></div>
-    <div class="ring"></div>
-    <div class="half"></div>
-    <div class="full"></div>
+  <div class="top">
+    <a class="home" href="/" aria-label="ioeo home">
+      <span class="mark sm" aria-hidden="true">
+        <span class="i"><span class="dot"></span><span class="bar"></span></span>
+        <span class="o"></span>
+        <span class="e"><span class="ring"></span><span class="fill"></span><span class="cut"></span></span>
+        <span class="full"></span>
+      </span>
+    </a>
+    <button class="lang" type="button"><span data-l="en">한국어</span><span data-l="ko">English</span></button>
   </div>
-  <h1>ioeo</h1>
-  <p class="lead">조용하고 깔끔한 Android 앱을 만듭니다.<br>Quiet, tidy apps for Android.</p>
 
-  <h2>APPS</h2>
+  <section class="hero">
+    <span class="mark lg" role="img" aria-label="ioeo">
+      <span class="i"><span class="dot"></span><span class="bar"></span></span>
+      <span class="o"></span>
+      <span class="e"><span class="ring"></span><span class="fill"></span><span class="cut"></span></span>
+      <span class="full"></span>
+    </span>
+    <h1>ioeo</h1>
+    <p class="lead" data-l="en">Quiet, tidy apps for Android.</p>
+    <p class="lead" data-l="ko">조용하고 깔끔한 Android 앱을 만듭니다.</p>
+  </section>
+
+  <p class="label">APPS</p>
   <div class="apps">
     <div class="app">
       <h3>Tide Launcher</h3>
-      <p>빠르고 단정한 홈 화면 런처</p>
-      <span class="badge">출시 예정 · Coming soon</span>
+      <p data-l="en">A fast, tidy home screen</p>
+      <p data-l="ko">빠르고 단정한 홈 화면 런처</p>
+      <span class="badge" data-l="en">Coming soon</span>
+      <span class="badge" data-l="ko">출시 예정</span>
     </div>
     <div class="app">
       <h3>Tide Browser</h3>
-      <p>번역과 광고 차단을 갖춘 가벼운 브라우저</p>
-      <span class="badge">출시 예정 · Coming soon</span>
+      <p data-l="en">A light browser with translation and ad blocking</p>
+      <p data-l="ko">번역과 광고 차단을 갖춘 가벼운 브라우저</p>
+      <span class="badge" data-l="en">Coming soon</span>
+      <span class="badge" data-l="ko">출시 예정</span>
     </div>
   </div>
 
-  <h2>INFO</h2>
+  <p class="label">INFO</p>
   <div class="links">
-    <a href="/privacy/">개인정보처리방침 · Privacy Policy</a>
+    <a href="/privacy/"><span data-l="en">Privacy Policy</span><span data-l="ko">개인정보처리방침</span></a>
     <a href="mailto:hello@ioeo.app">hello@ioeo.app</a>
   </div>
 

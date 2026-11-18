@@ -40,7 +40,19 @@ html[data-lang="en"] [data-l="ko"], html[data-lang="ko"] [data-l="en"] { display
 .app { background: var(--card); border:1px solid var(--line); border-radius: 18px; padding: 20px 22px; }
 .app h3 { margin: 0 0 4px; font-size: 18px; font-weight: 600; }
 .app p { margin: 0 0 10px; color: var(--muted); font-size: 15px; }
-.badge { font-size: 13px; color: var(--accent); }
+.badge { font-size: 13px; color: var(--accent); white-space: nowrap; }
+
+/* App family (Tide): one wide card, its apps listed inside. Standalone apps sit beside or below as .app cards. */
+.family { grid-column: 1 / -1; background: var(--card); border:1px solid var(--line); border-radius: 18px; padding: 22px 22px 6px; }
+.family-head { padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.family-head h3 { margin: 0 0 4px; font-size: 22px; font-weight: 600; letter-spacing: -0.3px; }
+.family-head p { margin: 0; color: var(--muted); font-size: 15px; }
+.members { list-style: none; margin: 0; padding: 0; }
+.members li { display:grid; grid-template-columns: 1fr auto; column-gap: 16px; padding: 14px 0; }
+.members li .badge { grid-column: 2; grid-row: 1; padding-top: 3px; }
+.members li + li { border-top: 1px solid var(--line); }
+.members h4 { margin: 0 0 2px; font-size: 17px; font-weight: 600; }
+.members p { margin: 0; color: var(--muted); font-size: 15px; }
 .links { display:flex; flex-wrap:wrap; gap: 20px; }
 
 /* Policy */

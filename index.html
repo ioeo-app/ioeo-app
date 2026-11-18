@@ -2,13 +2,15 @@
 <html lang="en" data-lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0E1A24">
 <title>ioeo</title>
 <meta name="description" content="ioeo makes quiet, tidy apps for Android, including the Tide family: Tide Launcher and Tide Browser.">
 <link rel="stylesheet" href="/assets/site.css">
 <script src="/assets/lang.js"></script>
+<script src="/assets/dock.js" defer></script>
 </head>
-<body>
+<body class="has-dock">
 <main>
   <div class="top">
     <a class="home" href="/" aria-label="ioeo">
@@ -28,34 +30,12 @@
   </section>
 
   <p class="label">APPS</p>
-  <div class="apps">
-    <section class="family" aria-labelledby="tide">
-      <div class="family-head">
-        <h3 id="tide">Tide</h3>
-        <p data-l="en">A family of apps that share one look and feel. One Tide Pro covers them all.</p>
-        <p data-l="ko">같은 모습과 손맛으로 이어지는 앱 묶음. Tide Pro 하나로 모든 Tide 앱을 씁니다.</p>
-      </div>
-      <ul class="members">
-        <li>
-          <div>
-            <h4>Tide Launcher</h4>
-            <p data-l="en">A fast, tidy home screen</p>
-            <p data-l="ko">빠르고 단정한 홈 화면 런처</p>
-          </div>
-          <span class="badge" data-l="en">Coming soon</span>
-          <span class="badge" data-l="ko">출시 예정</span>
-        </li>
-        <li>
-          <div>
-            <h4>Tide Browser</h4>
-            <p data-l="en">A light browser with translation and ad blocking</p>
-            <p data-l="ko">번역과 광고 차단을 갖춘 가벼운 브라우저</p>
-          </div>
-          <span class="badge" data-l="en">Coming soon</span>
-          <span class="badge" data-l="ko">출시 예정</span>
-        </li>
-      </ul>
-    </section>
+  <div class="groups">
+    <button class="group" type="button" data-open="tide" aria-controls="dock-panel" aria-expanded="false">
+      <span class="group-name">Tide</span>
+      <span class="group-sub"><span data-l="en">2 apps</span><span data-l="ko">앱 2개</span></span>
+      <svg class="group-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg>
+    </button>
   </div>
 
   <p class="label">INFO</p>
@@ -66,5 +46,34 @@
 
   <footer>© 2026 ioeo</footer>
 </main>
+
+<!-- Bottom search dock, same as Tide Launcher: the panel rises out of it -->
+<div class="scrim" hidden></div>
+<div class="dock" id="dock">
+  <div class="dock-inner">
+    <div class="panel" id="dock-panel" role="region" aria-label="Apps">
+      <div class="panel-head">
+        <span class="handle" aria-hidden="true"></span>
+        <p class="panel-title"></p>
+      </div>
+      <div class="panel-intro" data-for="tide" hidden>
+        <p class="panel-name">Tide</p>
+        <p data-l="en">A family of apps that share one look and feel. One Tide Pro covers them all.</p>
+        <p data-l="ko">같은 모습과 손맛으로 이어지는 앱 묶음. Tide Pro 하나로 모든 Tide 앱을 씁니다.</p>
+      </div>
+      <ul class="app-list"></ul>
+    </div>
+    <form class="bar" role="search" autocomplete="off">
+      <button class="bar-btn" type="button" aria-label="Search">
+        <svg class="ic-search" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+        <svg class="ic-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <label class="bar-field">
+        <span class="sr">Search apps</span>
+        <input type="search" enterkeyhint="search" aria-controls="dock-panel" aria-expanded="false">
+      </label>
+    </form>
+  </div>
+</div>
 </body>
 </html>
